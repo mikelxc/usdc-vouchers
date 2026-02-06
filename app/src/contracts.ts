@@ -112,6 +112,13 @@ export const CLAW_ABI = [
     inputs: [{ name: 'tokenId', type: 'uint256' }],
     outputs: [{ type: 'address' }],
   },
+  {
+    name: 'totalSupply',
+    type: 'function',
+    stateMutability: 'view',
+    inputs: [],
+    outputs: [{ type: 'uint256' }],
+  },
 ] as const
 
 export const USDC_ABI = [

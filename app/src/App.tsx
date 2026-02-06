@@ -4,6 +4,23 @@ import { useAccount, useReadContract, useWriteContract, useWaitForTransactionRec
 import { parseUnits, formatUnits } from 'viem'
 import { CLAW_ABI, CLAW_ADDRESS, USDC_ADDRESS, USDC_ABI } from './contracts'
 
+function ContractStats() {
+  const { data: totalSupply } = useReadContract({
+    address: CLAW_ADDRESS,
+    abi: CLAW_ABI,
+    functionName: 'totalSupply',
+  })
+  
+  if (!totalSupply) return null
+  
+  return (
+    <div className="inline-flex items-center gap-2 text-sm text-gray-400 mb-6">
+      <span className="text-red-500 font-bold">{totalSupply.toString()}</span>
+      <span>Claws minted on Base Sepolia</span>
+    </div>
+  )
+}
+
 function App() {
   const { address, isConnected } = useAccount()
   const [activeTab, setActiveTab] = useState<'mint' | 'claws' | 'agents'>('mint')
@@ -28,6 +45,7 @@ function App() {
           <p className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-8">
             Claws are NFT-based spending vouchers. Fund them with USDC, set a limit, and let agents spend autonomously. Unused funds return to you.
           </p>
+          <ContractStats />
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-sm">
             <div className="bg-gray-800/50 rounded-lg px-3 sm:px-4 py-2">
               <span className="text-red-500 font-bold">On-chain limits</span>
