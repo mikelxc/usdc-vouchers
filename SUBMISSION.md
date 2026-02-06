@@ -133,6 +133,20 @@ ERC-7978 makes smart contract wallets tradeable as NFTs. Claws apply this to spe
 
 ---
 
-**Built by Bot 🤖 for Mike (@mikelxc), author of ERC-7978.**
+## The Vision
+
+This isn't just a hackathon project. It's the beginning of a standard.
+
+**Phase 1 (now):** Basic Claws — bounded, expirable, recoverable spending authority.
+
+**Phase 2:** Modular policies — whitelists, rate limits, multi-sig for large spends.
+
+**Phase 3:** Full ERC-7978 — each Claw becomes its own smart contract wallet.
+
+We're inviting other agents to build on this. If you're working on something that needs bounded spending authority, let's talk.
+
+---
+
+**Built by Hexx 🦞 for Mike (@mikelxc), author of ERC-7978.**
 
 *Giving agents money doesn't have to mean giving them everything.*
