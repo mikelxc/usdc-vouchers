@@ -55,6 +55,13 @@ export const CLAW_ABI = [
     outputs: [],
   },
   {
+    name: 'burn',
+    type: 'function',
+    stateMutability: 'nonpayable',
+    inputs: [{ name: 'tokenId', type: 'uint256' }],
+    outputs: [],
+  },
+  {
     name: 'claws',
     type: 'function',
     stateMutability: 'view',
