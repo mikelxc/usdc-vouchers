@@ -11,8 +11,9 @@ One-time USDC spending vouchers for AI agents. Create disposable spending ticket
 ## Contract
 
 **Network:** Base Sepolia (Chain ID: 84532)  
-**VoucherFactory:** `[DEPLOYED_ADDRESS]`  
+**VoucherFactory:** `0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2`  
 **USDC:** `0x036CbD53842c5426634e7929541eC2318f3dCF7e`
+**Explorer:** [BaseScan](https://sepolia.basescan.org/address/0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2)
 
 ## Usage
 
@@ -24,13 +25,13 @@ To create a voucher for an agent:
 # 1. Approve USDC spending
 cast send 0x036CbD53842c5426634e7929541eC2318f3dCF7e \
   "approve(address,uint256)" \
-  [FACTORY_ADDRESS] \
+  0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   100000000 \
   --rpc-url https://sepolia.base.org \
   --private-key $PRIVATE_KEY
 
 # 2. Mint voucher (100 USDC, no expiry)
-cast send [FACTORY_ADDRESS] \
+cast send 0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   "mint(address,uint256,uint256)" \
   [AGENT_ADDRESS] \
   100000000 \
@@ -43,7 +44,7 @@ cast send [FACTORY_ADDRESS] \
 
 ```bash
 # Spend 30 USDC to a recipient
-cast send [FACTORY_ADDRESS] \
+cast send 0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   "spend(uint256,address,uint256)" \
   [TOKEN_ID] \
   [RECIPIENT_ADDRESS] \
@@ -56,13 +57,13 @@ cast send [FACTORY_ADDRESS] \
 
 ```bash
 # Get remaining balance
-cast call [FACTORY_ADDRESS] \
+cast call 0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   "getRemaining(uint256)" \
   [TOKEN_ID] \
   --rpc-url https://sepolia.base.org
 
 # Get full voucher details
-cast call [FACTORY_ADDRESS] \
+cast call 0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   "getVoucher(uint256)" \
   [TOKEN_ID] \
   --rpc-url https://sepolia.base.org
@@ -72,7 +73,7 @@ cast call [FACTORY_ADDRESS] \
 
 ```bash
 # Burn and return remaining USDC
-cast send [FACTORY_ADDRESS] \
+cast send 0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2 \
   "burn(uint256,address)" \
   [TOKEN_ID] \
   [RETURN_TO_ADDRESS] \

@@ -104,7 +104,7 @@ interface IVoucherFactory {
 
 | Network | Address | Explorer |
 |---------|---------|----------|
-| Base Sepolia | TBD | TBD |
+| Base Sepolia | `0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2` | [BaseScan](https://sepolia.basescan.org/address/0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2) |
 
 ## Why This Matters
 
