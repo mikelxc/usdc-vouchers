@@ -1,8 +1,10 @@
-# USDC Vouchers — One-Time Spending Power for AI Agents
+# 🦞 Claw — Tradeable Spending Authority for AI Agents
 
 **#USDCHackathon ProjectSubmission AgenticCommerce SmartContract Skill**
 
-> ERC-7978 inspired NFT vouchers that give AI agents disposable, scoped USDC spending authority.
+> NFT-based bounded wallets: humans fund, agents spend, unused returns. Fully tradeable.
+> 
+> *From the author of [ERC-7978](https://eip.tools/eip/7978) (Non-Fungible Account Tokens)*
 
 ## The Problem
 
@@ -102,9 +104,13 @@ interface IVoucherFactory {
 
 ## Deployed Contracts
 
-| Network | Address | Explorer |
-|---------|---------|----------|
-| Base Sepolia | `0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2` | [BaseScan](https://sepolia.basescan.org/address/0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2) |
+| Contract | Address | Explorer |
+|----------|---------|----------|
+| **Claw** (v2 - with on-chain SVG) | `0x1e9Bc36Ec1beA19FD8959D496216116a8Fe76bA2` | [BaseScan](https://sepolia.basescan.org/address/0x1e9Bc36Ec1beA19FD8959D496216116a8Fe76bA2) |
+| VoucherFactory (v1) | `0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2` | [BaseScan](https://sepolia.basescan.org/address/0x4c69CD2b2AC640C5b9eBfcA38Ab18176013515f2) |
+
+**Network:** Base Sepolia (84532)  
+**USDC:** `0x036CbD53842c5426634e7929541eC2318f3dCF7e`
 
 ## Proof of Work
 
@@ -119,6 +125,15 @@ Complete lifecycle demonstrated on Base Sepolia:
 | Mint Voucher #2 | [`0x8964ccd...`](https://sepolia.basescan.org/tx/0x8964ccd990f3e4393c25fac8d5cd34b3d1d91cf5afb02a8d3993ea82ae64c300) | 5 USDC, 7-day expiry |
 
 **Result:** Full lifecycle (mint → spend → spend → burn) completed. Voucher #2 active with time-based expiry.
+
+### Claw v2 (On-Chain SVG)
+
+| Action | TX Hash | Details |
+|--------|---------|---------|
+| Mint Claw #1 | [`0x01cb53c...`](https://sepolia.basescan.org/tx/0x01cb53cce6db98f718d7f5dd55d14e80187652780cc71f073ac0915df5de10f5) | 5 USDC |
+| Spend | [`0x33bd7af...`](https://sepolia.basescan.org/tx/0x33bd7afa8495adcfebc97c3c91f021a890ab50c05f225f209edd4f4372e51aa0) | 2 USDC (40% used) |
+
+**On-chain SVG updates live** — progress bar, remaining balance, status all rendered in the NFT metadata.
 
 ## Why This Matters
 
